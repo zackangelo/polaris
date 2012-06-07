@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		651407B31578000600CDDB40 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6514079B1578000600CDDB40 /* NSObject+SBJson.m */; };
+		651407B41578000600CDDB40 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6514079E1578000600CDDB40 /* SBJsonParser.m */; };
+		651407B51578000600CDDB40 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407A01578000600CDDB40 /* SBJsonStreamParser.m */; };
+		651407B61578000600CDDB40 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407A21578000600CDDB40 /* SBJsonStreamParserAccumulator.m */; };
+		651407B71578000600CDDB40 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407A41578000600CDDB40 /* SBJsonStreamParserAdapter.m */; };
+		651407B81578000600CDDB40 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407A61578000600CDDB40 /* SBJsonStreamParserState.m */; };
+		651407B91578000600CDDB40 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407A81578000600CDDB40 /* SBJsonStreamWriter.m */; };
+		651407BA1578000600CDDB40 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407AA1578000600CDDB40 /* SBJsonStreamWriterAccumulator.m */; };
+		651407BB1578000600CDDB40 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407AC1578000600CDDB40 /* SBJsonStreamWriterState.m */; };
+		651407BC1578000600CDDB40 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407AE1578000600CDDB40 /* SBJsonTokeniser.m */; };
+		651407BD1578000600CDDB40 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407B01578000600CDDB40 /* SBJsonUTF8Stream.m */; };
+		651407BE1578000600CDDB40 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 651407B21578000600CDDB40 /* SBJsonWriter.m */; };
+		651FD282157FBE02008D8BE4 /* PLStatusOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 651FD281157FBE01008D8BE4 /* PLStatusOverlayView.m */; };
+		651FD285157FD414008D8BE4 /* VideoStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 651FD284157FD414008D8BE4 /* VideoStream.m */; };
+		651FD288157FD80C008D8BE4 /* VideoStreamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651FD287157FD80B008D8BE4 /* VideoStreamTableViewController.m */; };
+		651FD28B157FF111008D8BE4 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 651FD28A157FF111008D8BE4 /* DataFetcher.m */; };
+		65709D1515791A3100C508AF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65709D1315791A3100C508AF /* MainViewController.m */; };
+		65709D1615791A3100C508AF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65709D1415791A3100C508AF /* MainViewController.xib */; };
+		6594D65C15700D6C004C5DA6 /* PLPlaybackQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594D65B15700D6C004C5DA6 /* PLPlaybackQueue.m */; };
+		6594D66015700F4F004C5DA6 /* PLStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594D65F15700F4F004C5DA6 /* PLStream.m */; };
+		6594D66315708779004C5DA6 /* PLPixelBufferPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594D66215708779004C5DA6 /* PLPixelBufferPool.m */; };
+		6594D6651573D75F004C5DA6 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6594D6641573D75E004C5DA6 /* OpenGLES.framework */; };
+		6594D6681573DD68004C5DA6 /* simple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 6594D6671573DD68004C5DA6 /* simple.vsh */; };
+		6594D66F15741768004C5DA6 /* simple.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6594D66E15741768004C5DA6 /* simple.fsh */; };
+		6594D67015741BEE004C5DA6 /* simple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6594D66E15741768004C5DA6 /* simple.fsh */; };
+		65A02618156DE65E0009CA34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02617156DE65E0009CA34 /* UIKit.framework */; };
+		65A0261A156DE65E0009CA34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02619156DE65E0009CA34 /* Foundation.framework */; };
+		65A0261C156DE65E0009CA34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A0261B156DE65E0009CA34 /* CoreGraphics.framework */; };
+		65A02622156DE65E0009CA34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65A02620156DE65E0009CA34 /* InfoPlist.strings */; };
+		65A02624156DE65E0009CA34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A02623156DE65E0009CA34 /* main.m */; };
+		65A02628156DE65E0009CA34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A02627156DE65E0009CA34 /* AppDelegate.m */; };
+		65A02639156DE74C0009CA34 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02633156DE74C0009CA34 /* libavcodec.a */; };
+		65A0263A156DE74C0009CA34 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02634156DE74C0009CA34 /* libavdevice.a */; };
+		65A0263B156DE74C0009CA34 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02635156DE74C0009CA34 /* libavfilter.a */; };
+		65A0263C156DE74C0009CA34 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02636156DE74C0009CA34 /* libavformat.a */; };
+		65A0263D156DE74C0009CA34 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02637156DE74C0009CA34 /* libavutil.a */; };
+		65A0263E156DE74C0009CA34 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02638156DE74C0009CA34 /* libswscale.a */; };
+		65A02643156DED900009CA34 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02642156DED900009CA34 /* libz.1.1.3.dylib */; };
+		65A02645156DEDA50009CA34 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02644156DEDA50009CA34 /* libbz2.1.0.dylib */; };
+		65A0264A156F20400009CA34 /* PLVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A02649156F20400009CA34 /* PLVideoPlayer.m */; };
+		65A0264D156F247E0009CA34 /* PLVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A0264C156F247E0009CA34 /* PLVideoDecoder.m */; };
+		65A02650156F296C0009CA34 /* PLFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A0264F156F296C0009CA34 /* PLFrame.m */; };
+		65A02653156F29D90009CA34 /* PLBlockingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A02652156F29D90009CA34 /* PLBlockingQueue.m */; };
+		65A02655156F32330009CA34 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A02654156F32330009CA34 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		651407901577131B00CDDB40 /* PLVideoDecoderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLVideoDecoderDelegate.h; sourceTree = "<group>"; };
+		6514079A1578000600CDDB40 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		6514079B1578000600CDDB40 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		6514079C1578000600CDDB40 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		6514079D1578000600CDDB40 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		6514079E1578000600CDDB40 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		6514079F1578000600CDDB40 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		651407A01578000600CDDB40 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		651407A11578000600CDDB40 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		651407A21578000600CDDB40 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		651407A31578000600CDDB40 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		651407A41578000600CDDB40 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		651407A51578000600CDDB40 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		651407A61578000600CDDB40 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		651407A71578000600CDDB40 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		651407A81578000600CDDB40 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		651407A91578000600CDDB40 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		651407AA1578000600CDDB40 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		651407AB1578000600CDDB40 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		651407AC1578000600CDDB40 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		651407AD1578000600CDDB40 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		651407AE1578000600CDDB40 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		651407AF1578000600CDDB40 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		651407B01578000600CDDB40 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		651407B11578000600CDDB40 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		651407B21578000600CDDB40 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		651FD280157FBE00008D8BE4 /* PLStatusOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLStatusOverlayView.h; sourceTree = "<group>"; };
+		651FD281157FBE01008D8BE4 /* PLStatusOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLStatusOverlayView.m; sourceTree = "<group>"; };
+		651FD283157FD413008D8BE4 /* VideoStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoStream.h; sourceTree = "<group>"; };
+		651FD284157FD414008D8BE4 /* VideoStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoStream.m; sourceTree = "<group>"; };
+		651FD286157FD80B008D8BE4 /* VideoStreamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoStreamTableViewController.h; sourceTree = "<group>"; };
+		651FD287157FD80B008D8BE4 /* VideoStreamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoStreamTableViewController.m; sourceTree = "<group>"; };
+		651FD289157FF110008D8BE4 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
+		651FD28A157FF111008D8BE4 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		65709D1215791A3100C508AF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		65709D1315791A3100C508AF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		65709D1415791A3100C508AF /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		6594D65A15700D6C004C5DA6 /* PLPlaybackQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlaybackQueue.h; sourceTree = "<group>"; };
+		6594D65B15700D6C004C5DA6 /* PLPlaybackQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlaybackQueue.m; sourceTree = "<group>"; };
+		6594D65E15700F4F004C5DA6 /* PLStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLStream.h; sourceTree = "<group>"; };
+		6594D65F15700F4F004C5DA6 /* PLStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLStream.m; sourceTree = "<group>"; };
+		6594D66115708779004C5DA6 /* PLPixelBufferPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPixelBufferPool.h; sourceTree = "<group>"; };
+		6594D66215708779004C5DA6 /* PLPixelBufferPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPixelBufferPool.m; sourceTree = "<group>"; };
+		6594D6641573D75E004C5DA6 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		6594D6671573DD68004C5DA6 /* simple.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple.vsh; sourceTree = "<group>"; };
+		6594D66E15741768004C5DA6 /* simple.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple.fsh; sourceTree = "<group>"; };
+		65A02613156DE65E0009CA34 /* Polaris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Polaris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A02617156DE65E0009CA34 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		65A02619156DE65E0009CA34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		65A0261B156DE65E0009CA34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		65A0261F156DE65E0009CA34 /* Polaris-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Polaris-Info.plist"; sourceTree = "<group>"; };
+		65A02621156DE65E0009CA34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		65A02623156DE65E0009CA34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65A02625156DE65E0009CA34 /* Polaris-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Polaris-Prefix.pch"; sourceTree = "<group>"; };
+		65A02626156DE65E0009CA34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		65A02627156DE65E0009CA34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		65A02633156DE74C0009CA34 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = lib/libavcodec.a; sourceTree = "<group>"; };
+		65A02634156DE74C0009CA34 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = lib/libavdevice.a; sourceTree = "<group>"; };
+		65A02635156DE74C0009CA34 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = lib/libavfilter.a; sourceTree = "<group>"; };
+		65A02636156DE74C0009CA34 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = lib/libavformat.a; sourceTree = "<group>"; };
+		65A02637156DE74C0009CA34 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = lib/libavutil.a; sourceTree = "<group>"; };
+		65A02638156DE74C0009CA34 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = lib/libswscale.a; sourceTree = "<group>"; };
+		65A02642156DED900009CA34 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		65A02644156DEDA50009CA34 /* libbz2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.1.0.dylib; path = usr/lib/libbz2.1.0.dylib; sourceTree = SDKROOT; };
+		65A02648156F20400009CA34 /* PLVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVideoPlayer.h; sourceTree = "<group>"; };
+		65A02649156F20400009CA34 /* PLVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVideoPlayer.m; sourceTree = "<group>"; };
+		65A0264B156F247D0009CA34 /* PLVideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLVideoDecoder.h; sourceTree = "<group>"; };
+		65A0264C156F247E0009CA34 /* PLVideoDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLVideoDecoder.m; sourceTree = "<group>"; };
+		65A0264E156F296C0009CA34 /* PLFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLFrame.h; sourceTree = "<group>"; };
+		65A0264F156F296C0009CA34 /* PLFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLFrame.m; sourceTree = "<group>"; };
+		65A02651156F29D90009CA34 /* PLBlockingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLBlockingQueue.h; path = ../../../git/polaris/Classes/PLBlockingQueue.h; sourceTree = "<group>"; };
+		65A02652156F29D90009CA34 /* PLBlockingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PLBlockingQueue.m; path = ../../../git/polaris/Classes/PLBlockingQueue.m; sourceTree = "<group>"; };
+		65A02654156F32330009CA34 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65A02610156DE65E0009CA34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6594D6651573D75F004C5DA6 /* OpenGLES.framework in Frameworks */,
+				65A02655156F32330009CA34 /* QuartzCore.framework in Frameworks */,
+				65A02645156DEDA50009CA34 /* libbz2.1.0.dylib in Frameworks */,
+				65A02643156DED900009CA34 /* libz.1.1.3.dylib in Frameworks */,
+				65A02618156DE65E0009CA34 /* UIKit.framework in Frameworks */,
+				65A0261A156DE65E0009CA34 /* Foundation.framework in Frameworks */,
+				65A0261C156DE65E0009CA34 /* CoreGraphics.framework in Frameworks */,
+				65A02639156DE74C0009CA34 /* libavcodec.a in Frameworks */,
+				65A0263A156DE74C0009CA34 /* libavdevice.a in Frameworks */,
+				65A0263B156DE74C0009CA34 /* libavfilter.a in Frameworks */,
+				65A0263C156DE74C0009CA34 /* libavformat.a in Frameworks */,
+				65A0263D156DE74C0009CA34 /* libavutil.a in Frameworks */,
+				65A0263E156DE74C0009CA34 /* libswscale.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		651407991578000600CDDB40 /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				6514079A1578000600CDDB40 /* NSObject+SBJson.h */,
+				6514079B1578000600CDDB40 /* NSObject+SBJson.m */,
+				6514079C1578000600CDDB40 /* SBJson.h */,
+				6514079D1578000600CDDB40 /* SBJsonParser.h */,
+				6514079E1578000600CDDB40 /* SBJsonParser.m */,
+				6514079F1578000600CDDB40 /* SBJsonStreamParser.h */,
+				651407A01578000600CDDB40 /* SBJsonStreamParser.m */,
+				651407A11578000600CDDB40 /* SBJsonStreamParserAccumulator.h */,
+				651407A21578000600CDDB40 /* SBJsonStreamParserAccumulator.m */,
+				651407A31578000600CDDB40 /* SBJsonStreamParserAdapter.h */,
+				651407A41578000600CDDB40 /* SBJsonStreamParserAdapter.m */,
+				651407A51578000600CDDB40 /* SBJsonStreamParserState.h */,
+				651407A61578000600CDDB40 /* SBJsonStreamParserState.m */,
+				651407A71578000600CDDB40 /* SBJsonStreamWriter.h */,
+				651407A81578000600CDDB40 /* SBJsonStreamWriter.m */,
+				651407A91578000600CDDB40 /* SBJsonStreamWriterAccumulator.h */,
+				651407AA1578000600CDDB40 /* SBJsonStreamWriterAccumulator.m */,
+				651407AB1578000600CDDB40 /* SBJsonStreamWriterState.h */,
+				651407AC1578000600CDDB40 /* SBJsonStreamWriterState.m */,
+				651407AD1578000600CDDB40 /* SBJsonTokeniser.h */,
+				651407AE1578000600CDDB40 /* SBJsonTokeniser.m */,
+				651407AF1578000600CDDB40 /* SBJsonUTF8Stream.h */,
+				651407B01578000600CDDB40 /* SBJsonUTF8Stream.m */,
+				651407B11578000600CDDB40 /* SBJsonWriter.h */,
+				651407B21578000600CDDB40 /* SBJsonWriter.m */,
+			);
+			path = SBJson;
+			sourceTree = "<group>";
+		};
+		651407BF1578119000CDDB40 /* Video Playback */ = {
+			isa = PBXGroup;
+			children = (
+				65A02648156F20400009CA34 /* PLVideoPlayer.h */,
+				65A02649156F20400009CA34 /* PLVideoPlayer.m */,
+				65A0264B156F247D0009CA34 /* PLVideoDecoder.h */,
+				65A0264C156F247E0009CA34 /* PLVideoDecoder.m */,
+				65A0264E156F296C0009CA34 /* PLFrame.h */,
+				65A0264F156F296C0009CA34 /* PLFrame.m */,
+				65A02651156F29D90009CA34 /* PLBlockingQueue.h */,
+				65A02652156F29D90009CA34 /* PLBlockingQueue.m */,
+				6594D65A15700D6C004C5DA6 /* PLPlaybackQueue.h */,
+				6594D65B15700D6C004C5DA6 /* PLPlaybackQueue.m */,
+				6594D65E15700F4F004C5DA6 /* PLStream.h */,
+				6594D65F15700F4F004C5DA6 /* PLStream.m */,
+				6594D66115708779004C5DA6 /* PLPixelBufferPool.h */,
+				6594D66215708779004C5DA6 /* PLPixelBufferPool.m */,
+				6594D6671573DD68004C5DA6 /* simple.vsh */,
+				6594D66E15741768004C5DA6 /* simple.fsh */,
+				651407901577131B00CDDB40 /* PLVideoDecoderDelegate.h */,
+				651FD280157FBE00008D8BE4 /* PLStatusOverlayView.h */,
+				651FD281157FBE01008D8BE4 /* PLStatusOverlayView.m */,
+			);
+			name = "Video Playback";
+			sourceTree = "<group>";
+		};
+		6594D6661573DD18004C5DA6 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
+		65A02608156DE65E0009CA34 = {
+			isa = PBXGroup;
+			children = (
+				6594D6661573DD18004C5DA6 /* Media */,
+				65A0261D156DE65E0009CA34 /* Classes */,
+				65A02616156DE65E0009CA34 /* Frameworks */,
+				65A02614156DE65E0009CA34 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65A02614156DE65E0009CA34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65A02613156DE65E0009CA34 /* Polaris.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65A02616156DE65E0009CA34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6594D6641573D75E004C5DA6 /* OpenGLES.framework */,
+				65A02644156DEDA50009CA34 /* libbz2.1.0.dylib */,
+				65A02642156DED900009CA34 /* libz.1.1.3.dylib */,
+				65A02633156DE74C0009CA34 /* libavcodec.a */,
+				65A02634156DE74C0009CA34 /* libavdevice.a */,
+				65A02635156DE74C0009CA34 /* libavfilter.a */,
+				65A02636156DE74C0009CA34 /* libavformat.a */,
+				65A02637156DE74C0009CA34 /* libavutil.a */,
+				65A02638156DE74C0009CA34 /* libswscale.a */,
+				65A02654156F32330009CA34 /* QuartzCore.framework */,
+				65A02617156DE65E0009CA34 /* UIKit.framework */,
+				65A02619156DE65E0009CA34 /* Foundation.framework */,
+				65A0261B156DE65E0009CA34 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65A0261D156DE65E0009CA34 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				651407BF1578119000CDDB40 /* Video Playback */,
+				651407991578000600CDDB40 /* SBJson */,
+				65A02626156DE65E0009CA34 /* AppDelegate.h */,
+				65A02627156DE65E0009CA34 /* AppDelegate.m */,
+				65A0261E156DE65E0009CA34 /* Supporting Files */,
+				65709D1215791A3100C508AF /* MainViewController.h */,
+				65709D1315791A3100C508AF /* MainViewController.m */,
+				65709D1415791A3100C508AF /* MainViewController.xib */,
+				651FD283157FD413008D8BE4 /* VideoStream.h */,
+				651FD284157FD414008D8BE4 /* VideoStream.m */,
+				651FD286157FD80B008D8BE4 /* VideoStreamTableViewController.h */,
+				651FD287157FD80B008D8BE4 /* VideoStreamTableViewController.m */,
+				651FD289157FF110008D8BE4 /* DataFetcher.h */,
+				651FD28A157FF111008D8BE4 /* DataFetcher.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		65A0261E156DE65E0009CA34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65A0261F156DE65E0009CA34 /* Polaris-Info.plist */,
+				65A02620156DE65E0009CA34 /* InfoPlist.strings */,
+				65A02623156DE65E0009CA34 /* main.m */,
+				65A02625156DE65E0009CA34 /* Polaris-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65A02612156DE65E0009CA34 /* Polaris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65A0262B156DE65E0009CA34 /* Build configuration list for PBXNativeTarget "Polaris" */;
+			buildPhases = (
+				65A0260F156DE65E0009CA34 /* Sources */,
+				65A02610156DE65E0009CA34 /* Frameworks */,
+				65A02611156DE65E0009CA34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Polaris;
+			productName = Polaris;
+			productReference = 65A02613156DE65E0009CA34 /* Polaris.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65A0260A156DE65E0009CA34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 65A0260D156DE65E0009CA34 /* Build configuration list for PBXProject "polaris" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 65A02608156DE65E0009CA34;
+			productRefGroup = 65A02614156DE65E0009CA34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65A02612156DE65E0009CA34 /* Polaris */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65A02611156DE65E0009CA34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A02622156DE65E0009CA34 /* InfoPlist.strings in Resources */,
+				6594D67015741BEE004C5DA6 /* simple.fsh in Resources */,
+				6594D6681573DD68004C5DA6 /* simple.vsh in Resources */,
+				65709D1615791A3100C508AF /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65A0260F156DE65E0009CA34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				651407B31578000600CDDB40 /* NSObject+SBJson.m in Sources */,
+				65A02624156DE65E0009CA34 /* main.m in Sources */,
+				65A02628156DE65E0009CA34 /* AppDelegate.m in Sources */,
+				65A0264A156F20400009CA34 /* PLVideoPlayer.m in Sources */,
+				65A0264D156F247E0009CA34 /* PLVideoDecoder.m in Sources */,
+				65A02650156F296C0009CA34 /* PLFrame.m in Sources */,
+				65A02653156F29D90009CA34 /* PLBlockingQueue.m in Sources */,
+				6594D65C15700D6C004C5DA6 /* PLPlaybackQueue.m in Sources */,
+				6594D66015700F4F004C5DA6 /* PLStream.m in Sources */,
+				6594D66315708779004C5DA6 /* PLPixelBufferPool.m in Sources */,
+				6594D66F15741768004C5DA6 /* simple.fsh in Sources */,
+				651407B41578000600CDDB40 /* SBJsonParser.m in Sources */,
+				651407B51578000600CDDB40 /* SBJsonStreamParser.m in Sources */,
+				651407B61578000600CDDB40 /* SBJsonStreamParserAccumulator.m in Sources */,
+				651407B71578000600CDDB40 /* SBJsonStreamParserAdapter.m in Sources */,
+				651407B81578000600CDDB40 /* SBJsonStreamParserState.m in Sources */,
+				651407B91578000600CDDB40 /* SBJsonStreamWriter.m in Sources */,
+				651407BA1578000600CDDB40 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				651407BB1578000600CDDB40 /* SBJsonStreamWriterState.m in Sources */,
+				651407BC1578000600CDDB40 /* SBJsonTokeniser.m in Sources */,
+				651407BD1578000600CDDB40 /* SBJsonUTF8Stream.m in Sources */,
+				651407BE1578000600CDDB40 /* SBJsonWriter.m in Sources */,
+				65709D1515791A3100C508AF /* MainViewController.m in Sources */,
+				651FD282157FBE02008D8BE4 /* PLStatusOverlayView.m in Sources */,
+				651FD285157FD414008D8BE4 /* VideoStream.m in Sources */,
+				651FD288157FD80C008D8BE4 /* VideoStreamTableViewController.m in Sources */,
+				651FD28B157FF111008D8BE4 /* DataFetcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		65A02620156DE65E0009CA34 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65A02621156DE65E0009CA34 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65A02629156DE65E0009CA34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ALWAYS_SEARCH_USER_PATHS[arch=*]" = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zack Angelo (PB8F2U76MD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "2AB368FC-2A5A-40DB-9C2C-D00A449D1DB9";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		65A0262A156DE65E0009CA34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zack Angelo (PB8F2U76MD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "2AB368FC-2A5A-40DB-9C2C-D00A449D1DB9";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65A0262C156DE65E0009CA34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/Polaris-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
+				INFOPLIST_FILE = "Classes/Polaris-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		65A0262D156DE65E0009CA34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/Polaris-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
+				INFOPLIST_FILE = "Classes/Polaris-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65A0260D156DE65E0009CA34 /* Build configuration list for PBXProject "polaris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A02629156DE65E0009CA34 /* Debug */,
+				65A0262A156DE65E0009CA34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65A0262B156DE65E0009CA34 /* Build configuration list for PBXNativeTarget "Polaris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A0262C156DE65E0009CA34 /* Debug */,
+				65A0262D156DE65E0009CA34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65A0260A156DE65E0009CA34 /* Project object */;
+}
