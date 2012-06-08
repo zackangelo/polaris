@@ -46,6 +46,24 @@
 @property (weak, nonatomic) IBOutlet UILabel *cb1BlockDisp;
 @property (weak, nonatomic) IBOutlet UILabel *cb2BlockLoad;
 @property (weak, nonatomic) IBOutlet UILabel *cb2BlockDisp;
+@property (weak, nonatomic) IBOutlet UILabel *totalLoad;
+@property (weak, nonatomic) IBOutlet UILabel *netLoad;
+@property (weak, nonatomic) IBOutlet UILabel *t1Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t1Deg;
+@property (weak, nonatomic) IBOutlet UILabel *t2Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t2Deg;
+@property (weak, nonatomic) IBOutlet UILabel *t3Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t3Deg;
+@property (weak, nonatomic) IBOutlet UILabel *t4Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t4Deg;
+@property (weak, nonatomic) IBOutlet UILabel *t5Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t5Deg;
+@property (weak, nonatomic) IBOutlet UILabel *t6Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t6Deg;
+@property (weak, nonatomic) IBOutlet UILabel *t7Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t7Deg;
+@property (weak, nonatomic) IBOutlet UILabel *t8Perc;
+@property (weak, nonatomic) IBOutlet UILabel *t8Deg;
 
 
 - (void) startReceiving;

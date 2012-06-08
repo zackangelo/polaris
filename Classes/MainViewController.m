@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 
 static NSNumberFormatter *numFormat;
+static NSNumberFormatter *percFormat;
 
 @implementation MainViewController
 @synthesize telemetryScrollView;
@@ -32,6 +33,24 @@ static NSNumberFormatter *numFormat;
 @synthesize cb1BlockDisp = _cb1BlockDisp;
 @synthesize cb2BlockLoad = _cb2BlockLoad;
 @synthesize cb2BlockDisp = _cb2BlockDisp;
+@synthesize totalLoad = _totalLoad;
+@synthesize netLoad = _netLoad;
+@synthesize t1Perc = _t1Perc;
+@synthesize t1Deg = _t1Deg;
+@synthesize t2Perc = _t2Perc;
+@synthesize t2Deg = _t2Deg;
+@synthesize t3Perc = _t3Perc;
+@synthesize t3Deg = _t3Deg;
+@synthesize t4Perc = _t4Perc;
+@synthesize t4Deg = _t4Deg;
+@synthesize t5Perc = _t5Perc;
+@synthesize t5Deg = _t5Deg;
+@synthesize t6Perc = _t6Perc;
+@synthesize t6Deg = _t6Deg;
+@synthesize t7Perc = _t7Perc;
+@synthesize t7Deg = _t7Deg;
+@synthesize t8Perc = _t8Perc;
+@synthesize t8Deg = _t8Deg;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,6 +63,11 @@ static NSNumberFormatter *numFormat;
         if(!numFormat) { 
             numFormat = [[NSNumberFormatter alloc] init];
             numFormat.numberStyle = NSNumberFormatterNoStyle;
+        }
+        
+        if(!percFormat) { 
+            percFormat = [[NSNumberFormatter alloc] init];
+            percFormat.numberStyle = NSNumberFormatterPercentStyle;
         }
         
         AppDelegate *app = [UIApplication sharedApplication].delegate;
@@ -72,6 +96,14 @@ static NSNumberFormatter *numFormat;
 
 - (void) setDispValue:(NSDecimalNumber *)n forLabel:(UILabel*)label { 
     label.text = [[numFormat stringFromNumber:n] stringByAppendingString:@" ft"];
+}
+
+- (void) setPercentValue:(NSDecimalNumber *)n forLabel:(UILabel*)label { 
+    label.text = [[numFormat stringFromNumber:n] stringByAppendingString:@"%"];
+}
+
+- (void) setAngleValue:(NSDecimalNumber *)n forLabel:(UILabel *)label { 
+    label.text = [[numFormat stringFromNumber:n] stringByAppendingString:@"\u00B0"];
 }
 
 - (void)updateData { 
@@ -120,9 +152,42 @@ static NSNumberFormatter *numFormat;
         [weakSelf setDispValue:[d objectForKey:@"b1cDisp"] forLabel:weakSelf->_cb1BlockDisp];
         [weakSelf setLoadValue:[d objectForKey:@"b2cLoad"] forLabel:weakSelf->_cb2BlockLoad];
         [weakSelf setDispValue:[d objectForKey:@"b2cDisp"] forLabel:weakSelf->_cb2BlockDisp]; 
+        
+        double a1Load = [[d objectForKey:@"a1Load"] doubleValue];
+        double a2Load = [[d objectForKey:@"a2Load"] doubleValue];
+        double b1Load = [[d objectForKey:@"b1Load"] doubleValue];
+        double b2Load = [[d objectForKey:@"b2Load"] doubleValue];
+        
+        NSDecimalNumber *totalLoad = [[NSDecimalNumber alloc] initWithDouble:a1Load+a2Load+b1Load+b2Load];
+        
+        double gaNetLoad = [[d objectForKey:@"gaNetLoad"] doubleValue];
+        double gbNetLoad = [[d objectForKey:@"gbNetLoad"] doubleValue];
+        
+        NSDecimalNumber *netLoad = [[NSDecimalNumber alloc] initWithDouble:gaNetLoad+gbNetLoad];
+        
+        [weakSelf setLoadValue:totalLoad forLabel:weakSelf->_totalLoad];
+        [weakSelf setLoadValue:netLoad forLabel:weakSelf->_netLoad];
+        
+        [weakSelf setAngleValue:[d objectForKey:@"t1deg"] forLabel:weakSelf->_t1Deg];
+        [weakSelf setAngleValue:[d objectForKey:@"t2deg"] forLabel:weakSelf->_t2Deg];
+        [weakSelf setAngleValue:[d objectForKey:@"t3deg"] forLabel:weakSelf->_t3Deg];
+        [weakSelf setAngleValue:[d objectForKey:@"t4deg"] forLabel:weakSelf->_t4Deg];
+        [weakSelf setAngleValue:[d objectForKey:@"t5deg"] forLabel:weakSelf->_t5Deg];
+        [weakSelf setAngleValue:[d objectForKey:@"t6deg"] forLabel:weakSelf->_t6Deg];
+        [weakSelf setAngleValue:[d objectForKey:@"t7deg"] forLabel:weakSelf->_t7Deg];
+        [weakSelf setAngleValue:[d objectForKey:@"t8deg"] forLabel:weakSelf->_t8Deg];
+        
+        [weakSelf setPercentValue:[d objectForKey:@"t1perc"] forLabel:weakSelf->_t1Perc];
+        [weakSelf setPercentValue:[d objectForKey:@"t2perc"] forLabel:weakSelf->_t2Perc];
+        [weakSelf setPercentValue:[d objectForKey:@"t3perc"] forLabel:weakSelf->_t3Perc];
+        [weakSelf setPercentValue:[d objectForKey:@"t4perc"] forLabel:weakSelf->_t4Perc];
+        [weakSelf setPercentValue:[d objectForKey:@"t5perc"] forLabel:weakSelf->_t5Perc];
+        [weakSelf setPercentValue:[d objectForKey:@"t6perc"] forLabel:weakSelf->_t6Perc];
+        [weakSelf setPercentValue:[d objectForKey:@"t7perc"] forLabel:weakSelf->_t7Perc];
+        [weakSelf setPercentValue:[d objectForKey:@"t8perc"] forLabel:weakSelf->_t8Perc];
     };
     
-    self.telemetryScrollView.contentSize = CGSizeMake(320 * 2,90);
+    self.telemetryScrollView.contentSize = CGSizeMake(320 * 3,90);
 //    [self.videoPlayer playVideoAtUrl:@"rtsp://video.vbar.com:1935/rtp-live/vb10k-vm2.stream"];
 }
 
@@ -148,6 +213,24 @@ static NSNumberFormatter *numFormat;
     [self setCb1BlockDisp:nil];
     [self setCb2BlockLoad:nil];
     [self setCb2BlockDisp:nil];
+    [self setTotalLoad:nil];
+    [self setNetLoad:nil];
+    [self setT1Perc:nil];
+    [self setT1Deg:nil];
+    [self setT2Perc:nil];
+    [self setT2Deg:nil];
+    [self setT3Perc:nil];
+    [self setT3Deg:nil];
+    [self setT4Perc:nil];
+    [self setT4Deg:nil];
+    [self setT5Perc:nil];
+    [self setT5Deg:nil];
+    [self setT6Perc:nil];
+    [self setT6Deg:nil];
+    [self setT7Perc:nil];
+    [self setT7Deg:nil];
+    [self setT8Perc:nil];
+    [self setT8Deg:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

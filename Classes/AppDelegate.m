@@ -39,7 +39,15 @@
     bowGantryStream.url = @"rtsp://video.vbar.com:1935/rtp-live/vb10k-bowgantry.stream";
     bowGantryStream.name = @"Bow Gantry Camera";
     
-    self.videoStreams = [NSArray arrayWithObjects:vm2stream, vm1stream, aftGantryStream, bowGantryStream, nil];
+    VideoStream *rov1Stream = [[VideoStream alloc] init];
+    rov1Stream.url = @"rtsp://video.vbar.com:1935/rtp-live/rov1.stream";
+    rov1Stream.name = @"Oceaneering MIL20 ROV";
+    
+    VideoStream *rov2Stream = [[VideoStream alloc] init];
+    rov2Stream.url = @"rtsp://video.vbar.com:1935/rtp-live/rov2.stream";
+    rov2Stream.name = @"Oceaneering MAG ROV";
+    
+    self.videoStreams = [NSArray arrayWithObjects:vm2stream, vm1stream, aftGantryStream, bowGantryStream, rov1Stream, rov2Stream, nil];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
