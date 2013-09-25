@@ -119,39 +119,45 @@ static NSNumberFormatter *percFormat;
     
     __weak MainViewController *weakSelf = self;
     
-    _streamTableViewCo.selectBlock = ^(VideoStream *stream) { 
-        weakSelf->_currentStream = stream;
+    _streamTableViewCo.selectBlock = ^(VideoStream *stream) {
+        MainViewController *strongSelf = weakSelf;
         
-        [weakSelf.videoPlayer playVideoAtUrl:stream.url];
-        [weakSelf dismissModalViewControllerAnimated:YES];
+        strongSelf->_currentStream = stream;
+        
+        [strongSelf.videoPlayer playVideoAtUrl:stream.url];
+        [strongSelf dismissModalViewControllerAnimated:YES];
     };
     
-    _streamTableViewCo.cancelBlock = ^ { 
-        [weakSelf dismissModalViewControllerAnimated:YES];
+    _streamTableViewCo.cancelBlock = ^ {
+        MainViewController *strongSelf = weakSelf;
+        
+        [strongSelf dismissModalViewControllerAnimated:YES];
     };
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Streams" style:UIBarButtonItemStylePlain target:self action:@selector(didPressStreams:)];
     
-    _dataFetcher.responseBlock = ^(NSDictionary *d) { 
-        [weakSelf setLoadValue:[d objectForKey:@"a1Load"] forLabel:weakSelf->_a1BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"a1Disp"] forLabel:weakSelf->_a1BlockDisp];
-        [weakSelf setLoadValue:[d objectForKey:@"a2Load"] forLabel:weakSelf->_a2BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"a2Disp"] forLabel:weakSelf->_a2BlockDisp];
+    _dataFetcher.responseBlock = ^(NSDictionary *d) {
+        MainViewController *strongSelf = weakSelf; 
         
-        [weakSelf setLoadValue:[d objectForKey:@"b1Load"] forLabel:weakSelf->_b1BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"b1Disp"] forLabel:weakSelf->_b1BlockDisp];
-        [weakSelf setLoadValue:[d objectForKey:@"b2Load"] forLabel:weakSelf->_b2BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"b2Disp"] forLabel:weakSelf->_b2BlockDisp]; 
+        [strongSelf setLoadValue:[d objectForKey:@"a1Load"] forLabel:strongSelf->_a1BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"a1Disp"] forLabel:strongSelf->_a1BlockDisp];
+        [strongSelf setLoadValue:[d objectForKey:@"a2Load"] forLabel:strongSelf->_a2BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"a2Disp"] forLabel:strongSelf->_a2BlockDisp];
         
-        [weakSelf setLoadValue:[d objectForKey:@"a1cLoad"] forLabel:weakSelf->_ca1BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"a1cDisp"] forLabel:weakSelf->_ca1BlockDisp];
-        [weakSelf setLoadValue:[d objectForKey:@"a2cLoad"] forLabel:weakSelf->_ca2BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"a2cDisp"] forLabel:weakSelf->_ca2BlockDisp];
+        [strongSelf setLoadValue:[d objectForKey:@"b1Load"] forLabel:strongSelf->_b1BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"b1Disp"] forLabel:strongSelf->_b1BlockDisp];
+        [strongSelf setLoadValue:[d objectForKey:@"b2Load"] forLabel:strongSelf->_b2BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"b2Disp"] forLabel:strongSelf->_b2BlockDisp]; 
         
-        [weakSelf setLoadValue:[d objectForKey:@"b1cLoad"] forLabel:weakSelf->_cb1BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"b1cDisp"] forLabel:weakSelf->_cb1BlockDisp];
-        [weakSelf setLoadValue:[d objectForKey:@"b2cLoad"] forLabel:weakSelf->_cb2BlockLoad];
-        [weakSelf setDispValue:[d objectForKey:@"b2cDisp"] forLabel:weakSelf->_cb2BlockDisp]; 
+        [strongSelf setLoadValue:[d objectForKey:@"a1cLoad"] forLabel:strongSelf->_ca1BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"a1cDisp"] forLabel:strongSelf->_ca1BlockDisp];
+        [strongSelf setLoadValue:[d objectForKey:@"a2cLoad"] forLabel:strongSelf->_ca2BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"a2cDisp"] forLabel:strongSelf->_ca2BlockDisp];
+        
+        [strongSelf setLoadValue:[d objectForKey:@"b1cLoad"] forLabel:strongSelf->_cb1BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"b1cDisp"] forLabel:strongSelf->_cb1BlockDisp];
+        [strongSelf setLoadValue:[d objectForKey:@"b2cLoad"] forLabel:strongSelf->_cb2BlockLoad];
+        [strongSelf setDispValue:[d objectForKey:@"b2cDisp"] forLabel:strongSelf->_cb2BlockDisp]; 
         
         double a1Load = [[d objectForKey:@"a1Load"] doubleValue];
         double a2Load = [[d objectForKey:@"a2Load"] doubleValue];
@@ -165,26 +171,26 @@ static NSNumberFormatter *percFormat;
         
         NSDecimalNumber *netLoad = [[NSDecimalNumber alloc] initWithDouble:gaNetLoad+gbNetLoad];
         
-        [weakSelf setLoadValue:totalLoad forLabel:weakSelf->_totalLoad];
-        [weakSelf setLoadValue:netLoad forLabel:weakSelf->_netLoad];
+        [strongSelf setLoadValue:totalLoad forLabel:strongSelf->_totalLoad];
+        [strongSelf setLoadValue:netLoad forLabel:strongSelf->_netLoad];
         
-        [weakSelf setAngleValue:[d objectForKey:@"t1deg"] forLabel:weakSelf->_t1Deg];
-        [weakSelf setAngleValue:[d objectForKey:@"t2deg"] forLabel:weakSelf->_t2Deg];
-        [weakSelf setAngleValue:[d objectForKey:@"t3deg"] forLabel:weakSelf->_t3Deg];
-        [weakSelf setAngleValue:[d objectForKey:@"t4deg"] forLabel:weakSelf->_t4Deg];
-        [weakSelf setAngleValue:[d objectForKey:@"t5deg"] forLabel:weakSelf->_t5Deg];
-        [weakSelf setAngleValue:[d objectForKey:@"t6deg"] forLabel:weakSelf->_t6Deg];
-        [weakSelf setAngleValue:[d objectForKey:@"t7deg"] forLabel:weakSelf->_t7Deg];
-        [weakSelf setAngleValue:[d objectForKey:@"t8deg"] forLabel:weakSelf->_t8Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t1deg"] forLabel:strongSelf->_t1Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t2deg"] forLabel:strongSelf->_t2Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t3deg"] forLabel:strongSelf->_t3Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t4deg"] forLabel:strongSelf->_t4Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t5deg"] forLabel:strongSelf->_t5Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t6deg"] forLabel:strongSelf->_t6Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t7deg"] forLabel:strongSelf->_t7Deg];
+        [strongSelf setAngleValue:[d objectForKey:@"t8deg"] forLabel:strongSelf->_t8Deg];
         
-        [weakSelf setPercentValue:[d objectForKey:@"t1perc"] forLabel:weakSelf->_t1Perc];
-        [weakSelf setPercentValue:[d objectForKey:@"t2perc"] forLabel:weakSelf->_t2Perc];
-        [weakSelf setPercentValue:[d objectForKey:@"t3perc"] forLabel:weakSelf->_t3Perc];
-        [weakSelf setPercentValue:[d objectForKey:@"t4perc"] forLabel:weakSelf->_t4Perc];
-        [weakSelf setPercentValue:[d objectForKey:@"t5perc"] forLabel:weakSelf->_t5Perc];
-        [weakSelf setPercentValue:[d objectForKey:@"t6perc"] forLabel:weakSelf->_t6Perc];
-        [weakSelf setPercentValue:[d objectForKey:@"t7perc"] forLabel:weakSelf->_t7Perc];
-        [weakSelf setPercentValue:[d objectForKey:@"t8perc"] forLabel:weakSelf->_t8Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t1perc"] forLabel:strongSelf->_t1Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t2perc"] forLabel:strongSelf->_t2Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t3perc"] forLabel:strongSelf->_t3Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t4perc"] forLabel:strongSelf->_t4Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t5perc"] forLabel:strongSelf->_t5Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t6perc"] forLabel:strongSelf->_t6Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t7perc"] forLabel:strongSelf->_t7Perc];
+        [strongSelf setPercentValue:[d objectForKey:@"t8perc"] forLabel:strongSelf->_t8Perc];
     };
     
     self.telemetryScrollView.contentSize = CGSizeMake(320 * 3,90);
